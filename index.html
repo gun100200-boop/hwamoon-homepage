@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hwamoon | 발리 한식당 화문</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for a fancy look -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">HWAMOON</div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#reservation">Reservation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <h1 class="animate-up">발리의 품격 있는 한식, 화문</h1>
+                <p class="animate-up delay-1">전통의 맛과 발리의 아름다움이 만나는 곳</p>
+                <a href="#reservation" class="cta-button animate-up delay-2">지금 예약하기</a>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu">
+            <h2 class="section-title">Signature Dishes</h2>
+            <div class="menu-grid">
+                <!-- Food items will be added here -->
+                <div class="menu-item">
+                    <div class="menu-img-placeholder"></div>
+                    <h3>화문 보쌈</h3>
+                    <p>특제 소스로 삶아낸 부드러운 고기</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-img-placeholder"></div>
+                    <h3>발리 갈비</h3>
+                    <p>발리의 향취를 담은 특별한 갈비 구이</p>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-img-placeholder"></div>
+                    <h3>비빔밥</h3>
+                    <p>신선한 재료의 조화가 일품인 전통 비빔밥</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Review Marquee Section -->
+        <section id="reviews">
+            <h2 class="section-title">Guest Reviews</h2>
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <div class="review-card">⭐⭐⭐⭐⭐ "발리에서 먹은 최고의 한식이었어요!"</div>
+                    <div class="review-card">⭐⭐⭐⭐⭐ "분위기가 너무 좋고 음식이 정갈합니다."</div>
+                    <div class="review-card">⭐⭐⭐⭐⭐ "친절한 서비스와 환상적인 맛!"</div>
+                    <div class="review-card">⭐⭐⭐⭐⭐ "가족들과 함께 가기 딱 좋은 곳입니다."</div>
+                    <div class="review-card">⭐⭐⭐⭐⭐ "예약도 간편하고 음식도 금방 나왔어요."</div>
+                    <!-- Duplicate for infinite effect -->
+                    <div class="review-card">⭐⭐⭐⭐⭐ "발리에서 먹은 최고의 한식이었어요!"</div>
+                    <div class="review-card">⭐⭐⭐⭐⭐ "분위기가 너무 좋고 음식이 정갈합니다."</div>
+                    <div class="review-card">⭐⭐⭐⭐⭐ "친절한 서비스와 환상적인 맛!"</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reservation Section -->
+        <section id="reservation">
+            <h2 class="section-title">Reservation</h2>
+            <div class="reservation-container">
+                <form id="reservation-form">
+                    <div class="form-group">
+                        <label for="name">성함 (Name)</label>
+                        <input type="text" id="name" required placeholder="예: 홍길동">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">날짜 (Date)</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">시간 (Time)</label>
+                        <input type="time" id="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pax">인원 (Number of People)</label>
+                        <input type="number" id="pax" min="1" required placeholder="예: 4">
+                    </div>
+                    <button type="submit" class="submit-button">WhatsApp으로 예약 전송</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 HWAMOON Bali. All rights reserved.</p>
+        <p>Address: Jl. Hwamoon, Bali, Indonesia</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
