@@ -73,6 +73,41 @@ nav ul li a:hover {
     color: var(--accent-color);
 }
 
+/* Language Selector Styling */
+.lang-wrapper {
+    position: relative;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+#lang-selector {
+    background: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none;
+    padding-right: 1.8rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.6rem center;
+}
+
+#lang-selector:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
+#lang-selector option {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
 /* Hero Section */
 #hero {
     height: 100vh;
@@ -237,12 +272,19 @@ section {
     font-weight: 600;
 }
 
-.form-group input {
+.form-group input,
+.form-group select,
+.form-group textarea {
     width: 100%;
     padding: 0.8rem;
     border: 1px solid #ddd;
     border-radius: 5px;
     font-family: inherit;
+    background-color: white;
+}
+
+.form-group textarea {
+    resize: vertical;
 }
 
 .submit-button {

@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hwamoon | 발리 한식당 화문</title>
+    <title>Hwamoon | Korean Restaurant in Bali</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for a fancy look -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Noto+Sans+TC:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Flatpickr for localized date picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/dark.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ko.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/zh-tw.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ru.js"></script>
 </head>
 <body>
 
@@ -14,10 +23,20 @@
         <nav>
             <div class="logo">HWAMOON</div>
             <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#reservation">Reservation</a></li>
+                <li><a href="#hero" data-i18n="nav_home">Home</a></li>
+                <li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
+                <li><a href="#reviews" data-i18n="nav_reviews">Reviews</a></li>
+                <li><a href="#reservation" data-i18n="nav_reservation">Reservation</a></li>
+                <li class="lang-wrapper">
+                    <select id="lang-selector">
+                        <option value="en">English</option>
+                        <option value="ko">한국어</option>
+                        <option value="zh-cn">简体中文</option>
+                        <option value="zh-tw">繁體中文</option>
+                        <option value="ja">日本語</option>
+                        <option value="ru">Русский</option>
+                    </select>
+                </li>
             </ul>
         </nav>
     </header>
@@ -26,75 +45,72 @@
         <!-- Hero Section -->
         <section id="hero">
             <div class="hero-content">
-                <h1 class="animate-up">발리의 품격 있는 한식, 화문</h1>
-                <p class="animate-up delay-1">전통의 맛과 발리의 아름다움이 만나는 곳</p>
-                <a href="#reservation" class="cta-button animate-up delay-2">지금 예약하기</a>
+                <h1 class="animate-up" data-i18n="hero_title">Elegant Korean Cuisine in Bali, Hwamoon</h1>
+                <p class="animate-up delay-1" data-i18n="hero_subtitle">Where tradition meets the beauty of Bali</p>
+                <a href="#reservation" class="cta-button animate-up delay-2" data-i18n="cta_book_now">Book Now</a>
             </div>
         </section>
 
         <!-- Menu Section -->
         <section id="menu">
-            <h2 class="section-title">Signature Dishes</h2>
+            <h2 class="section-title" data-i18n="menu_title">Signature Dishes</h2>
             <div class="menu-grid">
-                <!-- Food items will be added here -->
                 <div class="menu-item">
                     <div class="menu-img-placeholder"></div>
-                    <h3>화문 보쌈</h3>
-                    <p>특제 소스로 삶아낸 부드러운 고기</p>
+                    <h3 data-i18n="dish_1_name">Hwamoon Bossam</h3>
+                    <p data-i18n="dish_1_desc">Tender pork boiled with our special secret sauce</p>
                 </div>
                 <div class="menu-item">
                     <div class="menu-img-placeholder"></div>
-                    <h3>발리 갈비</h3>
-                    <p>발리의 향취를 담은 특별한 갈비 구이</p>
+                    <h3 data-i18n="dish_2_name">Bali Galbi</h3>
+                    <p data-i18n="dish_2_desc">Special grilled ribs with a touch of Bali's flavor</p>
                 </div>
                 <div class="menu-item">
                     <div class="menu-img-placeholder"></div>
-                    <h3>비빔밥</h3>
-                    <p>신선한 재료의 조화가 일품인 전통 비빔밥</p>
+                    <h3 data-i18n="dish_3_name">Bibimbap</h3>
+                    <p data-i18n="dish_3_desc">Traditional mixed rice with fresh seasonal ingredients</p>
                 </div>
             </div>
         </section>
 
         <!-- Review Marquee Section -->
         <section id="reviews">
-            <h2 class="section-title">Guest Reviews</h2>
+            <h2 class="section-title" data-i18n="reviews_title">Guest Reviews</h2>
             <div class="marquee-container">
-                <div class="marquee-content">
-                    <div class="review-card">⭐⭐⭐⭐⭐ "발리에서 먹은 최고의 한식이었어요!"</div>
-                    <div class="review-card">⭐⭐⭐⭐⭐ "분위기가 너무 좋고 음식이 정갈합니다."</div>
-                    <div class="review-card">⭐⭐⭐⭐⭐ "친절한 서비스와 환상적인 맛!"</div>
-                    <div class="review-card">⭐⭐⭐⭐⭐ "가족들과 함께 가기 딱 좋은 곳입니다."</div>
-                    <div class="review-card">⭐⭐⭐⭐⭐ "예약도 간편하고 음식도 금방 나왔어요."</div>
-                    <!-- Duplicate for infinite effect -->
-                    <div class="review-card">⭐⭐⭐⭐⭐ "발리에서 먹은 최고의 한식이었어요!"</div>
-                    <div class="review-card">⭐⭐⭐⭐⭐ "분위기가 너무 좋고 음식이 정갈합니다."</div>
-                    <div class="review-card">⭐⭐⭐⭐⭐ "친절한 서비스와 환상적인 맛!"</div>
+                <div class="marquee-content" id="review-marquee">
+                    <!-- Review cards will be populated via JS for translation -->
                 </div>
             </div>
         </section>
 
         <!-- Reservation Section -->
         <section id="reservation">
-            <h2 class="section-title">Reservation</h2>
+            <h2 class="section-title" data-i18n="reservation_title">Reservation</h2>
             <div class="reservation-container">
                 <form id="reservation-form">
                     <div class="form-group">
-                        <label for="name">성함 (Name)</label>
-                        <input type="text" id="name" required placeholder="예: 홍길동">
+                        <label for="name" data-i18n="label_name">Name</label>
+                        <input type="text" id="name" required data-i18n-placeholder="placeholder_name" placeholder="e.g. John Doe">
                     </div>
                     <div class="form-group">
-                        <label for="date">날짜 (Date)</label>
-                        <input type="date" id="date" required>
+                        <label for="date" data-i18n="label_date">Date</label>
+                        <input type="text" id="date" required data-i18n-placeholder="placeholder_date" placeholder="Select a date">
                     </div>
                     <div class="form-group">
-                        <label for="time">시간 (Time)</label>
-                        <input type="time" id="time" required>
+                        <label for="time" data-i18n="label_time">Time</label>
+                        <select id="time" required>
+                            <option value="" data-i18n="option_select_time">Select a time</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="pax">인원 (Number of People)</label>
-                        <input type="number" id="pax" min="1" required placeholder="예: 4">
+                        <label for="pax" data-i18n="label_pax">Number of People</label>
+                        <input type="number" id="pax" min="1" required data-i18n-placeholder="placeholder_pax" placeholder="e.g. 4">
                     </div>
-                    <button type="submit" class="submit-button">WhatsApp으로 예약 전송</button>
+                    <div class="form-group">
+                        <label for="requests" data-i18n="label_requests">Special Requests</label>
+                        <textarea id="requests" rows="3" data-i18n-placeholder="placeholder_requests" placeholder="e.g. Allergies, high chair, etc."></textarea>
+                    </div>
+                    <button type="submit" class="submit-button" data-i18n="btn_submit">Send Reservation via WhatsApp</button>
                 </form>
             </div>
         </section>
